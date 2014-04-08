@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Generative Graphics with openFrameworks on the Raspberry Pi</title>
+
+		<meta name="description" content="Main slideshow for the Generative Graphics with openFrameworks on the Raspberry Pi workshop">
+		<meta name="author" content="Krisjanis Rijnieks">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/solarized.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+
+		<style>
+			.main-menu {
+				text-align: right;
+
+			}
+
+			.main-menu a {
+				display: inline-block;
+				padding: 5px 10px;
+				text-decoration: none;
+				color: black;
+				text-transform: uppercase;
+				font-weight: bold;
+			}
+
+			.main-menu a:hover {
+				color: gray;
+			}
+		</style>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+		<div class="main-menu">
+			<a href="#">Home</a>
+		</div><!-- /.main-menu -->
+		<div class="reveal">
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>Introduction to openFrameworks</h1>
+					<h3>on the Raspberry Pi</h3>
+				</section>
+
+				<section>
+					<h2>Check connection to the Pi</h2>
+					<p>Make sure that you are able to connect to the Raspberry Pi by issuing this in the terminal:</p>
+					<pre>ssh pi@your.pi.ip.address</pre>
+					<p>Replace <code>your.pi.ip.address</code> with the actual ip address of your Pi (eg. 192.168.2.200)</p>
+				</section>
+
+				<section>
+					<h2>Setup remote desktop</h2>
+					<p>get <a href="http://xquartz.macosforge.org/landing/">XQuartz</a> for Mac<br></p>
+					<p>get <a href="http://mobaxterm.mobatek.net/">MobaXterm</a> for Windows</p>
+					<p>nothing extra for Linux</p>
+				</section>
+
+				<section>
+					<h2>Access Pi remote desktop</h2>
+					<p>In Mac and Linux Terminal just type:</p>
+					<pre>ssh -X pi@your.pi.ip.addr</pre>
+					<p>Replace your.pi.ip.addr with the actual IP address of the Pi.</p>
+					<p>Connect using <a href="http://mobaxterm.mobatek.net/">MobaXterm</a> on Windows. Remote desktop capability should be enabled by default there.</p>
+				</section>
+
+				<section>
+					<h2>Get GEdit</h2>
+				</section>
+
+				<section class="fragments">
+					<h3>openFrameworks overview</h3>
+					<p>As said in the openFrameworks <a href="http://openframeworks.cc" target="_blank">website</a>: </p>
+					<blockquote>openFrameworks is an open source C++ toolkit for creative coding.</blockquote>
+					<p class="fragment"><br><small>True it is...</small></p>
+				</section>
+
+				<section>
+					<h3>Based on C++</h3>
+					<p>openFrameworks is written in C++ and basically it is C++ with all it's pros and cons.</p>
+				</section>
+				<section>
+					<h3>Project directory structure</h3>
+					<p>There are two main directories:</p>
+					<ul>
+						<li><b>src</b><br><small>for the source .h and .cpp files</small></li>
+						<li><b>bin</b><br><small>for the compiled program files</small></li>
+					</ul>
+				</section>
+				<section>
+					<h3>File types</h3>
+					<p>There are two basic file types:</p>
+					<ul>
+						<li><b>.h</b><br><small>or header files</small></li>
+						<li><b>.cpp</b><br><small>or C++ files</small></li>
+					</ul>
+				</section>
+				<section>
+					<h3>Main functions</h3>
+					<p>openFrameworks has three main functions:</p>
+					<ul>
+						<li><b>setup()</b><br><small>Does the initial setup when the program starts</small></li>
+						<li><b>update()</b><br><small>Updates data, this is where to do the math</small></li>
+						<li><b>draw()</b><br><small>Draw images, videos or anything else</small></li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Makefile</h3>
+					<p>There has to be a <b>Makefile</b> in the project folder to be able to compile the project. If it is not there, copy it from some of the default projects like <b>emptyExample</b>:</p>
+					<pre>cp ../emptyExample/Makefile ./</pre>
+				</section>
+				<section>
+					<h3>Using addons</h3>
+					<p>You need to have a <b>addons.make</b> file in your project directory. Simply enter the folder name of the addon you want to use in the file, separate multiple addons with a newline:</p>
+					<pre>ofxMidi
+ofxOsc</pre>
+				</section>
+				<section>
+					<h3>Sum-up</h3>
+					<p>The process is basically the same for almost all projects:</p>
+					<ol>
+						<li>Edit code</li>
+						<li>Upload to the Raspberry Pi</li>
+						<li>Compile and run</li>
+					</ol>
+				</section>
+		</div><!-- /.reveal -->
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Parallax scrolling
+				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				// parallaxBackgroundSize: '2100px 900px',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
