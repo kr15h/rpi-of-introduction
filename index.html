@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>Generative Graphics with openFrameworks on the Raspberry Pi</title>
+		<title>Introduction to openFrameworks on the Raspberry Pi</title>
 
 		<meta name="description" content="Main slideshow for the Generative Graphics with openFrameworks on the Raspberry Pi workshop">
 		<meta name="author" content="Krisjanis Rijnieks">
@@ -63,42 +63,88 @@
 				</section>
 
 				<section>
-					<h2>Check connection to the Pi</h2>
-					<p>Make sure that you are able to connect to the Raspberry Pi by issuing this in the terminal:</p>
-					<pre>ssh pi@your.pi.ip.address</pre>
-					<p>Replace <code>your.pi.ip.address</code> with the actual ip address of your Pi (eg. 192.168.2.200)</p>
+					<h2>Setting up the display</h2>
+					<p>Everything should be all-right if you are using a regular HDMI display - Raspberry Pi should be able to detect monitors's native resolution autmatically.</p>
+
+					<p>In case you are using a HDMI to DVI adapter, you might need to adjust the monitor settings manually by editing the <code>config.txt</code> file on the Raspbian boot partition.</p>
+
+					<p>Here you can find available configuration options: <a href="http://elinux.org/RPiconfig#Video" target="_blank">http://elinux.org/RPiconfig#Video</a></p>
 				</section>
 
 				<section>
-					<h2>Setup remote desktop</h2>
-					<p>get <a href="http://xquartz.macosforge.org/landing/">XQuartz</a> for Mac<br></p>
-					<p>get <a href="http://mobaxterm.mobatek.net/">MobaXterm</a> for Windows</p>
-					<p>nothing extra for Linux</p>
+					<section>
+						<h2>Get GEdit</h2>
+						<p>In the Raspberry Pi Terminal type:</p>
+						<pre>sudo apt-get install gedit</pre>
+					</section>
+					<section>
+						<h3>Test GEdit</h3>
+						<p>To test if it works, type the name of the program (<code>gedit</code>) in the RPi Terminal:</p>
+						<pre>gedit</pre>
+						<p>A window with a text editor interface should open.</p>
+					</section>
 				</section>
 
 				<section>
-					<h2>Access Pi remote desktop</h2>
-					<p>In Mac and Linux Terminal just type:</p>
-					<pre>ssh -X pi@your.pi.ip.addr</pre>
-					<p>Replace your.pi.ip.addr with the actual IP address of the Pi.</p>
-					<p>Connect using <a href="http://mobaxterm.mobatek.net/">MobaXterm</a> on Windows. Remote desktop capability should be enabled by default there.</p>
-				</section>
-
-				<section>
-					<h2>Get GEdit</h2>
+					<h2>Enter desktop mode</h2>
+					<p>For the sake of simplicity, we are going to use the Raspberry Pi desktop mode. To enter it, type the following in the RPi terminal: </p>
+					<pre>startx</pre>
 				</section>
 
 				<section class="fragments">
-					<h3>openFrameworks overview</h3>
-					<p>As said in the openFrameworks <a href="http://openframeworks.cc" target="_blank">website</a>: </p>
+					<h2>openFrameworks overview</h2>
+					<p>As said in the openFrameworks <a href="http://openframeworks.cc" target="_blank">website</a>:</p>
 					<blockquote>openFrameworks is an open source C++ toolkit for creative coding.</blockquote>
 					<p class="fragment"><br><small>True it is...</small></p>
 				</section>
 
 				<section>
-					<h3>Based on C++</h3>
-					<p>openFrameworks is written in C++ and basically it is C++ with all it's pros and cons.</p>
+					<section>
+					<h2>Based on C++</h2>
+						<p>openFrameworks is written in C++ and basically it is C++ with all it's pros and cons.</p>
+					</section>
+					<section>
+						<h3>C++ pros</h3>
+						<ul>
+							<li>Very Fast</li>
+							<li>Well documented</li>
+							<li>A lot of available libraries</li>
+						</ul>
+					</section>
+					<section>
+						<h3>C++ cons</h3>
+						<ul>
+							<li>Not so easy to learn</li>
+							<li>Takes a long time to master</li>
+						</ul>
+					</section>
 				</section>
+
+				<section>
+					<h2>Learn C++</h2>
+					<p>Good C++ learning resources:</p>
+					<ul>
+						<li><a href="http://www.learncpp.com" target="_blank">The C++ Tutorial</a> from LearnCpp.com</li>
+						<li><a href="http://www.cplusplus.com/reference/" target="_blank">CPlusPlus.com</a> on-line reference</li>
+						<li><a href="http://www.stroustrup.com" target="_blank">Bjarne Stroustrup</a> - the creator of C++</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>openFrameworks directory</h2>
+					<p>If you followed <a href="http://openframeworks.cc/setup/raspberrypi/Raspberry-Pi-Getting-Started.html" target="_blank">the guide on the oF website</a>, your openFrameworks directory should be located in your home directory: <code>/home/pi</code>. Enter it by typing in the RPi Terminal:</p>
+					<pre>cd /home/pi/openFrameworks</pre>
+				</section>
+
+				<section>
+					<h2>openFrameworks directory</h2>
+					<ul>
+						<li>apps<br><small>This is the main directory for storing your work - code and compiled programs.</small></li>
+						<li>addons<br><small>oF default and 3rd party addons that you can use in your programs.</small></li>
+						<li>examples<br><small>Here you can find different openFrameworks examples. It's a good way to learn openFrameworks by exploring them.</small></li>
+					</ul>
+				</section>
+
 				<section>
 					<h3>Project directory structure</h3>
 					<p>There are two main directories:</p>
