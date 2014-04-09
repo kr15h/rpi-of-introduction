@@ -87,7 +87,7 @@
 
 				<section>
 					<h2>Enter desktop mode</h2>
-					<p>For the sake of simplicity, we are going to use the Raspberry Pi desktop mode. To enter it, type the following in the RPi terminal: </p>
+					<p>For the sake of simplicity, we are going to use the Raspberry Pi desktop mode. To enter it, type the following in the Raspberry Pi terminal: </p>
 					<pre>startx</pre>
 				</section>
 
@@ -122,7 +122,7 @@
 
 				<section>
 					<h2>Learn C++</h2>
-					<p>Good C++ learning resources:</p>
+					<p>Don't be afraid! There are good C++ learning resources:</p>
 					<ul>
 						<li><a href="http://www.learncpp.com" target="_blank">The C++ Tutorial</a> from LearnCpp.com</li>
 						<li><a href="http://www.cplusplus.com/reference/" target="_blank">CPlusPlus.com</a> on-line reference</li>
@@ -146,21 +146,69 @@
 				</section>
 
 				<section>
-					<h3>Project directory structure</h3>
-					<p>There are two main directories:</p>
+					<h2>apps directory</h2>
+					<p>The apps directory contains categories of apps. There is one predefined category <code>myApps</code> already there.</p>
+				</section>
+
+				<section>
+					<h2>Application directory</h2>
+					<p>There are two main directories that should be in each openFrameworks project folder:</p>
 					<ul>
 						<li><b>src</b><br><small>for the source .h and .cpp files</small></li>
 						<li><b>bin</b><br><small>for the compiled program files</small></li>
 					</ul>
 				</section>
+
 				<section>
-					<h3>File types</h3>
+					<h2>File types</h2>
 					<p>There are two basic file types:</p>
 					<ul>
 						<li><b>.h</b><br><small>or header files</small></li>
 						<li><b>.cpp</b><br><small>or C++ files</small></li>
 					</ul>
 				</section>
+
+				<section>
+					<section>
+						<h2>Hands on</h2>
+						<p>In the Pi Terminal type</p> 
+						<pre>cd /home/pi/openFrameworks/apps</pre> 
+						<p>and press <kbd>Enter</kbd> to go to your openFrameworks application directory.</p>
+					</section>
+					<section>
+						<h3>Download examples using Git</h3>
+						<p>In the Pi Terminal type</p>
+						<pre>git clone https://github.com/kr15h/rpi-of-workshop-examples.git</pre>
+						<p>press <kbd>Enter</kbd>. This will download the example projects of this workshop in <code>rpi-of-workshop-examples</code> within the openFrameworks <code>apps</code> directory.</p>
+					</section>
+					<section>
+						<h3>Enter example directory</h3>
+						<p>In the Pi Terminal type</p>
+						<pre>cd rpi-of-workshop-examples</pre>
+						<p>and press <kbd>Enter</kbd>.</p>
+					</section>
+					<section>
+						<h3>Compile an example</h3>
+						<p>Try to compile and run the examples by entering a project directory. Type</p>
+						<pre>cd testApp</pre>
+						<p>and press <kbd>Enter</kbd> to enter the <code>testApp</code> project directory. Type</p>
+						<pre>make</pre>
+						<p>and press <kbd>Enter</kbd> to compile. It will take some time, just wait.</p>
+					</section>
+					<section>
+						<h3>Run an example</h3>
+						<p>In Pi Terminal type</p>
+						<pre>make run</pre>
+						<p>and press <kbd>Enter</kbd> to open the testApp program. You can also type</p>
+						<pre>./bin/testApp</pre>
+						<p>to launch it as the compiled program file is located in the <code>bin/</code> directory within the <code>testApp</code> project folder.</p>
+					</section>
+					<section>
+						<h3>Try out other examples</h3>
+						<p>Try to compile and run other examples by repeating the previous steps.</p>
+					</section>
+				</section>
+
 				<section>
 					<h3>Main functions</h3>
 					<p>openFrameworks has three main functions:</p>
