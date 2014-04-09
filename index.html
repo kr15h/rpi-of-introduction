@@ -72,23 +72,26 @@
 				</section>
 
 				<section>
+					<h2>Enter desktop mode</h2>
+					<p>For the sake of simplicity, we are going to use the Raspberry Pi desktop mode. To enter it, type the following in the Raspberry Pi terminal: </p>
+					<pre>startx</pre>
+					<p><small>Press <kbd>Enter</kbd> and Raspberry Pi should transform in an almost normal desktop computer.</small></p>
+
+				</section>
+
+				<section>
 					<section>
 						<h2>Get GEdit</h2>
 						<p>In the Raspberry Pi Terminal type:</p>
 						<pre>sudo apt-get install gedit</pre>
+						<p><small>Press <kbd>Enter</kbd> to start the installation process. It might happen that the apt-get program asks you questions, press <kbd>Y</kbd> and <kbd>Enter</kbd> to proceed.</small></p>
 					</section>
 					<section>
 						<h3>Test GEdit</h3>
 						<p>To test if it works, type the name of the program (<code>gedit</code>) in the RPi Terminal:</p>
 						<pre>gedit</pre>
-						<p>A window with a text editor interface should open.</p>
+						<p><small>Press <kbd>Enter</kbd> and a window with a text editor interface should open.</small></p>
 					</section>
-				</section>
-
-				<section>
-					<h2>Enter desktop mode</h2>
-					<p>For the sake of simplicity, we are going to use the Raspberry Pi desktop mode. To enter it, type the following in the Raspberry Pi terminal: </p>
-					<pre>startx</pre>
 				</section>
 
 				<section class="fragments">
@@ -137,7 +140,7 @@
 				</section>
 
 				<section>
-					<h2>openFrameworks directory</h2>
+					<h2>Most important oF directories</h2>
 					<ul>
 						<li>apps<br><small>This is the main directory for storing your work - code and compiled programs.</small></li>
 						<li>addons<br><small>oF default and 3rd party addons that you can use in your programs.</small></li>
@@ -210,35 +213,47 @@
 				</section>
 
 				<section>
-					<h3>Main functions</h3>
-					<p>openFrameworks has three main functions:</p>
-					<ul>
-						<li><b>setup()</b><br><small>Does the initial setup when the program starts</small></li>
-						<li><b>update()</b><br><small>Updates data, this is where to do the math</small></li>
-						<li><b>draw()</b><br><small>Draw images, videos or anything else</small></li>
-					</ul>
+					<section>
+						<h2>Addons</h2>
+						<p>Some of the examples require 3rd party addons. Navigate to the addons folder by typing</p>
+						<pre>cd /home/pi/openFrameworks/addons</pre>
+						<p>and pressing <kbd>Enter</kbd>.</p>
+					</section>
+					<section>
+						<h3>ofxTween addon</h3>
+						<p>To install the <code>ofxTween</code> addon, type</[>
+						<pre>git clone https://github.com/arturoc/ofxTween.git</pre>
+						<p>press <kbd>Enter</kbd> and wait. <code>ofxTween</code> directory will be created in the openFrameworks addons folder.</p>
+					</section>
+					<section>
+						<h3>ofxStateMachine addon</h3>
+						<p>To install the <code>ofxStateMachine</code> addon, type</[>
+						<pre>git clone https://github.com/neilmendoza/ofxStateMachine.git</pre>
+						<p>press <kbd>Enter</kbd> and wait. <code>ofxStateMachine</code> directory will be created in the openFrameworks addons folder.</p>
+					</section>
+					<section>
+						<h3>Other addons</h3>
+						<p>Similarly you can install other addons if they are published on GitHub. If they are not, download the addon and place it in the <code>openFrameworks/addons</code> folder yourself.</p>
+					</section>
+					<section>
+						<h3>Where to search for addons?</h3>
+						<p><a href="http://ofxaddons.com" target="_blank">ofxaddons.com</a> contains a lot of interesting addons that can be useful for your own projects. Note that all of them does <b>not</b> work on the Raspberry Pi, so be careful.</p>
+					</section>
 				</section>
 
-				<section>
-					<h3>Makefile</h3>
-					<p>There has to be a <b>Makefile</b> in the project folder to be able to compile the project. If it is not there, copy it from some of the default projects like <b>emptyExample</b>:</p>
-					<pre>cp ../emptyExample/Makefile ./</pre>
-				</section>
 				<section>
 					<h3>Using addons</h3>
 					<p>You need to have a <b>addons.make</b> file in your project directory. Simply enter the folder name of the addon you want to use in the file, separate multiple addons with a newline:</p>
 					<pre>ofxMidi
 ofxOsc</pre>
 				</section>
+
 				<section>
-					<h3>Sum-up</h3>
-					<p>The process is basically the same for almost all projects:</p>
-					<ol>
-						<li>Edit code</li>
-						<li>Upload to the Raspberry Pi</li>
-						<li>Compile and run</li>
-					</ol>
-				</section>
+					<h3>Makefile</h3>
+					<p>There has to be a <b>Makefile</b> in the project folder to be able to compile the project. If it is not there, copy it from some of the default projects like <b>emptyExample</b>:</p>
+					<pre>cp ../emptyExample/Makefile ./</pre>
+				</section>				
+				
 		</div><!-- /.reveal -->
 
 		<script src="lib/js/head.min.js"></script>
